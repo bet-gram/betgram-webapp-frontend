@@ -70,6 +70,7 @@ h2 {
   padding: 10px 55px 10px 35px;
   font-size: 1.2em;
   font-weight: 300;
+  z-index: 1000;
 }
 
 #blog:hover {
@@ -114,8 +115,31 @@ h2 {
   color: #3F8ABF;
 }
 
-#emotions #chart {
-  margin-top: 23vh;
+#emotions #emenu {
+  text-align: center;
+  margin: 10vh auto 6vh auto;
+}
+
+#emotions #emenu h4 {
+  transition: 0.2s;
+  padding: 15px 0;
+  background: #333;
+  color: #FFF;
+  font-weight: 300;
+  border: 1px solid #222;
+  cursor: pointer;
+  width: 75%;
+  margin: auto;
+}
+
+#emotions #emenu h4:hover {
+  background: #222;
+}
+
+#emotions .content {
+  margin-top: 10vh;
+  max-width: 80%;
+  margin: auto;
 }
 
 /* End emotions */
@@ -143,6 +167,12 @@ h2 {
 
 #games {
   background: #FFF;
+}
+
+#games h1 {
+  font-size: 4em;
+  margin-top: 30vh;
+  text-align: center;
 }
 
 #games h2 {
@@ -177,7 +207,7 @@ h2 {
   font-size: 1.24em;
   font-weight: 300;
   border-bottom: 1px solid #222;
-  transition: background 0.15s ease-in-out;
+  transition: 0.2s;
 }
 
 #features .fitem:hover {
@@ -223,7 +253,7 @@ h2 {
 }
 
 #pricing .purchase {
-  transition: background 0.2s ease;
+  transition: background 0.2s;
   padding: 16px 0;
   color: #FFF;
   font-weight: 300;
