@@ -29,7 +29,7 @@ h2 {
 
 #bg {
   z-index: -2;
-  transition: background 0.2s;
+  transition: 4s;
   position: fixed;
   top: 0;
   left: 0;
