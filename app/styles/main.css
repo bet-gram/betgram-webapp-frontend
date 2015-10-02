@@ -1,89 +1,268 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-/* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  font-size: 1.3em;
+  font-weight: 100;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+ul {
+  list-style: none;
+  margin: 0;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+h2 {
+  margin-top: 50px;
+  font-size: 3em;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+.fscreen {
+  height: 100vh;
+  padding: 5vh 0;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.content {
+  width: 90%;
+  margin: 10vh auto;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+/* Bg section */
+
+#bg {
+  z-index: -2;
+  transition: background 4s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
+.bg0 { background: url('../images/bg0.jpg'); }
+.bg1 { background: url('../images/bg1.jpg'); }
+.bg2 { background: url('../images/bg2.jpg'); }
+.bg3 { background: url('../images/bg3.jpg'); }
+
+#black {
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* End bg */
+
+/* Home section */
+
+#home {
+  color: white;
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
 }
 
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+#home .container {
+  margin: 11vh auto;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+#home #logo {
+  width: 15%;
 }
 
-.marketing p + h4 {
-  margin-top: 28px;
+#home h1 {
+  font-size: 7em;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
+#home h2 {
+  margin-top: 22px;
+  font-size: 3.5em;
+}
+
+/* End home */
+
+/* Emotions section */
+
+#emotions {
+  background: #FFF;
+}
+
+#emotions h2 {
+  color: #3F8ABF;
+}
+
+#emotions #chart {
+  margin-top: 23vh;
+}
+
+/* End emotions */
+
+/* Separator section */
+
+.separator {
+  color: #FFF;
+  height: 34vh;
+}
+
+.separator h2 {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 2.3em;
+}
+
+.separator q {
+  font-size: 1.5em;
+}
+
+/* End Separator
+
+/* Games section */
+
+#games {
+  background: #FFF;
+}
+
+#games h2 {
+  color: #3F8ABF;
+}
+
+/* End games */
+
+/* Features section */
+
+#features {
+  background: #FFF;
+}
+
+#features h2 {
+  color: #3F8ABF;
+}
+
+#features .row {
+  margin: 30px auto;
+}
+
+#features i {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+#features .fitem {
+  color: #EEE;
+  background: #333;
+  padding: 40px 0 125px 0;
+  font-size: 1.24em;
+  font-weight: 300;
+  border-bottom: 1px solid #222;
+  transition: all .15s ease-in-out;
+}
+
+#features .fitem:hover {
+  transform: scale(1.033);
+}
+
+/* End features */
+
+/* Pricing section */
+
+#pricing {
+}
+
+#pricing h2 {
+  color: #FFF;
+}
+
+#pricing .pitem {
+  padding: 20px 50px;
+  min-height: 45vh;
+  background: #FFF;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+#pricing ul {
+  margin: 20px auto;
+  padding: 0;
+}
+
+#pricing li {
+  margin-bottom: 15px;
+}
+
+#pricing .chk {
+  display: inline;
+}
+
+#pricing p {
+  margin-left: 7px;
+  display: inline;
+  font-size: 1.15em;
+}
+
+#pricing .purchase {
+  transition: background 0.2s ease;
+  padding: 16px 0;
+  color: #FFF;
+  font-weight: 300;
+  font-size: 1.3em;
+  border: none;
+  width: 100%;
+}
+
+#pricing span {
+  margin-top: 15px;
+  text-align: right;
+  font-size: 1.6em;
+}
+
+#pricing #pmonth span,
+#pricing #pmonth .chk {
+  color: #5FCF80;
+}
+
+#pricing #pmonth .purchase {
+  background: #5FCF80;
+  border-bottom: 2px solid #3DAD60;
+}
+
+#pricing #pmonth .purchase:hover {
+  background: #3DAD60;
+}
+
+#pricing #pseason {
+  margin-top: 39px;
+}
+
+#pricing #pseason span,
+#pricing #pseason .chk {
+  color: #31A3C5;
+}
+
+#pricing #pseason .purchase {
+  background: #31A3C5;
+  border-bottom: 2px solid #3F8ABF;
+}
+
+#pricing #pseason .purchase:hover {
+  background: #3F8ABF;
+}
+
+/* End pricing */
+
+
+.bounce {
+  -webkit-animation: bounce 5s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%, 10%, 25%, 40%, 50% {
+    -webkit-transform: translateY(0);
   }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+  20% {
+    -webkit-transform: translateY(-12px);
   }
 
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  30% {
+    -webkit-transform: translateY(-6px);
   }
 }
