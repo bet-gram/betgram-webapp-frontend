@@ -35,6 +35,8 @@ h2 {
   left: 0;
   height: 100vh;
   width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bg0 { background: url('../images/bg0.jpg'); }
@@ -165,17 +167,17 @@ h2 {
 
 /* Games section */
 
-#games {
+#games, #emotions {
   background: #FFF;
 }
 
-#games h1 {
+#games h1, #emotions h1 {
   font-size: 4em;
   margin-top: 30vh;
   text-align: center;
 }
 
-#games h2 {
+#games h2, #emotions h2 {
   color: #3F8ABF;
 }
 
@@ -227,7 +229,6 @@ h2 {
 
 #pricing .pitem {
   padding: 20px 50px;
-  min-height: 45vh;
   background: #FFF;
   font-size: 1.2em;
   font-weight: 300;
@@ -283,7 +284,6 @@ h2 {
 }
 
 #pricing #pseason {
-  margin-top: 39px;
 }
 
 #pricing #pseason span,
