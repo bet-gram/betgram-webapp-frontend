@@ -1,258 +1,100 @@
 <!doctype html>
-<html class="no-js">
+<html ng-app="app">
   <head>
-    <meta charset="utf-8">
+    <!-- Betgram site title -->
+    <!-- begin title -->
     <title>Welcome to betgram</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/c3/c3.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- fontawesome icons -->
+    <!-- end title -->
+
+    <!-- Meta tags for charset, description, and viewport -->
+    <!-- begin meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Betgram">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- end meta -->
+
+    <!-- CSS styles ,fonts, and favicon -->
+    <!-- begin link -->
+    <link rel="shortcut icon" href="./favicon.ico">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- endfontawesome -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <!-- fonts -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/assets/css/main.css">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:100,300'>
-    <!-- endfonts -->
+    <!-- end link -->
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+    <!-- Main background with images and black layer -->
+    <!-- begin background -->
     <div id="bg" class="bg0"></div>
     <div id="black"></div>
+    <!-- end background -->
 
+    <!-- Fixed button with access to betgram's blog -->
+    <!-- begin blog -->
     <div id="blog">
       <h4>Check our blog</h4>
     </div>
+    <!-- end blog -->
 
-    <div id="home" class="fscreen">
-      <div class="container">
-        <object id="logo" type="image/svg+xml" data="images/logo.svg"></object>
-        <h1>betgram</h1>
-        <h2><q>Making goals with data</q></h2>
-        <i class="fa fa-angle-double-down fa-5x bounce"></i>
-      </div>
-    </div>
+    <!-- Welcome screen containing logo, name, and slogan -->
+    <!-- begin home -->
+    <div home-directive></div>
+    <!-- end home -->
 
-    <div id="emotions" class="fscreen">
-      <div class="container">
-        <h2>Check out what others are saying</h2>
-        <div class="content">
-          <h1>
-            Sorry, we are under construction
-            <i class="fa fa-legal"></i>
-          </h1>
-        </div>
-      </div>
-    </div>
+    <!-- Sentiment gradiend per continent, and world map -->
+    <!-- begin sentiment -->
+    <div sentiment-directive></div>
+    <!-- end sentiment -->
 
-    <div class="separator">
-      <div class="container">
-        <h2>
-          <q>Without data, you're just another person with an opinion</q>
-          <br>W. Eduards Deming
-        </h2>
-      </div>
-    </div>
+    <!-- Past and future premier league games information -->
+    <!-- begin games -->
+    <div games-directive></div>
+    <!-- end games -->
 
-    <div id="games" class="fscreen">
-      <div class="container">
-        <h2>Take a look at some games</h2>
-        <div class="content">
-          <h1>
-            Sorry, we are under construction
-            <i class="fa fa-legal"></i>
-          </h1>
-        </div>
-      </div>
-    </div>
+    <!-- Feature section, telling us why betgram is better -->
+    <!-- begin features -->
+    <div features-directive></div>
+    <!-- end features -->
 
-    <div class="separator">
-      <div class="container">
-        <h2>
-          <q>HAPPINESS IS ...winning a bet</q>
-          <br>youhappyihappy.com
-        </h2>
-      </div>
-    </div>
+    <!-- Pricing section, how much does betgram cost -->
+    <!-- begin pricing -->
+    <div pricing-directive></div>
+    <!-- end pricing -->
 
-    <div id="features" class="fscreen">
-      <div class="container">
-        <h2>Discover our amazing features</h2>
-        <div class="content">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="fitem">
-                <div class="col-md-3">
-                  <i class="fa fa-database fa-4x"></i>
-                </div>
-                <div class="col-md-8">
-                  <h4>Title 1</h4>
-                  <p>
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos de texto.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="fitem">
-                <div class="col-md-3">
-                  <i class="fa fa-cube fa-4x"></i>
-                </div>
-                <div class="col-md-8">
-                  <h4>Title 2</h4>
-                  <p>
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos de texto.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="fitem">
-                <div class="col-md-3">
-                  <i class="fa fa-dashboard fa-4x"></i>
-                </div>
-                <div class="col-md-8">
-                  <h4>Title 3</h4>
-                  <p>
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos de texto.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="fitem">
-                <div class="col-md-3">
-                  <i class="fa fa-area-chart fa-4x"></i>
-                </div>
-                <div class="col-md-8">
-                  <h4>Title 4</h4>
-                  <p>
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos de texto.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- JS library and custom scripts -->
+    <!-- begin script -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-mocks.js"></script>
+    <script src="./src/assets/lib/main.js"></script>
+    <script src="./src/app.js"></script>
 
-    <div id="pricing" class="fscreen">
-      <div class="container">
-        <h2>Last but not least, pricing</h2>
-        <div class="content">
-          <div class="col-md-6">
-            <div id="pmonth" class="pitem">
-              <div class="row ptit">
-                <h3 class="col-md-8">Monthly plan</h3>
-                <span class="col-md-4">$99/mo</span>
-              </div>
-              <ul>
-                <li class="row">
-                  <i class="fa fa-check-circle-o fa-2x col-md-1 chk"></i>
-                  <p class="col-md-10">
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos.
-                  </p>
-                </li>
-                <li class="row">
-                  <i class="fa fa-check-circle-o fa-2x col-md-1 chk"></i>
-                  <p class="col-md-10">
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos.
-                  </p>
-                </li>
-                <li class="row">
-                  <i class="fa fa-check-circle-o fa-2x col-md-1 chk"></i>
-                  <p class="col-md-10">
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos.
-                  </p>
-                </li>
-              </ul>
-              <button class="purchase">Start you 14 day trial</button>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div id="pseason" class="pitem">
-              <div class="row ptit">
-                <h3 class="col-md-8">Season plan</h3>
-                <span class="col-md-4">$999/yr</span>
-              </div>
-              <ul>
-                <li class="row">
-                  <i class="fa fa-check-circle-o fa-2x col-md-1 chk"></i>
-                  <p class="col-md-10">
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos.
-                  </p>
-                </li>
-                <li class="row">
-                  <i class="fa fa-check-circle-o fa-2x col-md-1 chk"></i>
-                  <p class="col-md-10">
-                    Lorem Ipsum es simplemente el texto de relleno
-                    de las imprentas y archivos.
-                  </p>
-                </li>
-              </ul>
-              <button class="purchase">Start you 14 day trial</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <script src="./src/modules/home/home.mod.js"></script>
+    <script src="./src/modules/home/home.ctr.js"></script>
+    <script src="./src/modules/home/home.dir.js"></script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/d3/d3.js"></script>
-    <script src="bower_components/c3/c3.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+    <script src="./src/modules/sentiment/sentiment.mod.js"></script>
+    <script src="./src/modules/sentiment/sentiment.ctr.js"></script>
+    <script src="./src/modules/sentiment/sentiment.dir.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+    <script src="./src/modules/games/games.mod.js"></script>
+    <script src="./src/modules/games/games.ctr.js"></script>
+    <script src="./src/modules/games/games.dir.js"></script>
+    <script src="./src/modules/games/games.svc.js"></script>
 
-        <!-- build:js(.) scripts/plugins.js -->
-        <script src="bower_components/bootstrap/js/affix.js"></script>
-        <script src="bower_components/bootstrap/js/alert.js"></script>
-        <script src="bower_components/bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/bootstrap/js/modal.js"></script>
-        <script src="bower_components/bootstrap/js/transition.js"></script>
-        <script src="bower_components/bootstrap/js/button.js"></script>
-        <script src="bower_components/bootstrap/js/popover.js"></script>
-        <script src="bower_components/bootstrap/js/carousel.js"></script>
-        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/bootstrap/js/collapse.js"></script>
-        <script src="bower_components/bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
+    <script src="./src/modules/features/features.mod.js"></script>
+    <script src="./src/modules/features/features.ctr.js"></script>
+    <script src="./src/modules/features/features.dir.js"></script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <script src="./src/modules/pricing/pricing.mod.js"></script>
+    <script src="./src/modules/pricing/pricing.ctr.js"></script>
+    <script src="./src/modules/pricing/pricing.dir.js"></script>
+
+    <script src="./src/shared/mock/mock.mod.js"></script>
+    <!-- end script -->
 </body>
 </html>

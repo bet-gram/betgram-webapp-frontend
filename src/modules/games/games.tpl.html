@@ -1,0 +1,59 @@
+<div id="games">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Take a look at some games</h2>
+        
+        <!-- begin tablegames -->
+        <div id="tablegames">
+          <div class="row">
+            <!-- begin details -->
+            <div id="details" class="col-md-7">
+              <div class="bg"></div>
+              <div class="content">
+                <div class="larr" ng-click="gamesCtrl.select(gamesCtrl.menuIndex-1, 'content')">
+                  <i class="fa fa-angle-left fa-2x"></i>
+                </div>
+                <div class="rarr" ng-click="gamesCtrl.select(gamesCtrl.menuIndex+1, 'content')">
+                  <i class="fa fa-angle-right fa-2x"></i>
+                </div>
+                <div class="menu">
+                  <i  ng-repeat="x in gamesCtrl.getNumber(gamesCtrl.menuItems) track by $index"
+                      ng-class="gamesCtrl.isSelected($index, 'content', 'fa fa-dot-circle-o', 'fa fa-circle-o')"
+                      ng-click="gamesCtrl.select($index, 'content')">
+                  </i>
+                </div>
+                <div ng-show="gamesCtrl.isSelected(0, 'content', true, false)">
+                  <img id="result" data-ng-src="data:image/png;base64,{{ gamesCtrl.match.result }}">
+                </div>
+              </div>
+            </div>
+            <!-- end details -->
+
+            <!-- begin matches -->
+            <div id="matches" class="col-md-5">
+              <ul>
+                <li ng-repeat="x in gamesCtrl.matches"
+                    ng-class="gamesCtrl.isSelected($index, 'match', 'selected', '')"
+                    ng-click="gamesCtrl.select($index, 'match')">
+                  <div class="team">
+                    <img class="shield" data-ng-src="data:image/png;base64,{{ x.logo1 }}">
+                    {{ x.team1 }}
+                    <span>{{ x.result1 }}</span>
+                  </div>
+                  <div class="team">
+                    <img class="shield" data-ng-src="data:image/png;base64,{{ x.logo2 }}">
+                    {{ x.team2 }}
+                    <span>{{ x.result2 }}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- end matches -->
+          </div>
+        </div>
+        <!-- end tablegames -->
+      </div>
+    </div>
+  </div>
+</div>
