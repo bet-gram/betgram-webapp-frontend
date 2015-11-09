@@ -4,28 +4,32 @@
       <div class="col-md-12">
         <h2>Take a look at some games</h2>
         
+        <!-- begin timetab -->
+        <div id="timetab">
+          <ul>
+            <li id="pasttab"
+                ng-click="gamesCtrl.select(0, 'content')"
+                ng-class="gamesCtrl.isSelected(0, 'content', 'selected', '')">
+              Past
+            </li>
+            <li id="prestab"
+                ng-click="gamesCtrl.select(1, 'content')"
+                ng-class="gamesCtrl.isSelected(1, 'content', 'selected', '')">
+              Future
+            </li>
+          </ul>
+        </div>
+        <!-- end timetab -->
+
         <!-- begin tablegames -->
-        <div id="tablegames">
+        <div id="tablegames" class="">
           <div class="row">
+
             <!-- begin details -->
             <div id="details" class="col-md-7">
               <div class="bg"></div>
               <div class="content">
-                <div class="larr" ng-click="gamesCtrl.select(gamesCtrl.menuIndex-1, 'content')">
-                  <i class="fa fa-angle-left fa-2x"></i>
-                </div>
-                <div class="rarr" ng-click="gamesCtrl.select(gamesCtrl.menuIndex+1, 'content')">
-                  <i class="fa fa-angle-right fa-2x"></i>
-                </div>
-                <div class="menu">
-                  <i  ng-repeat="x in gamesCtrl.getNumber(gamesCtrl.menuItems) track by $index"
-                      ng-class="gamesCtrl.isSelected($index, 'content', 'fa fa-dot-circle-o', 'fa fa-circle-o')"
-                      ng-click="gamesCtrl.select($index, 'content')">
-                  </i>
-                </div>
-                <div ng-show="gamesCtrl.isSelected(0, 'content', true, false)">
-                  <img id="result" data-ng-src="data:image/png;base64,{{ gamesCtrl.match.result }}">
-                </div>
+                <img id="result" ng-src="{{ gamesCtrl.match.image }}">
               </div>
             </div>
             <!-- end details -->
@@ -35,16 +39,34 @@
               <ul>
                 <li ng-repeat="x in gamesCtrl.matches"
                     ng-class="gamesCtrl.isSelected($index, 'match', 'selected', '')"
-                    ng-click="gamesCtrl.select($index, 'match')">
-                  <div class="team">
-                    <img class="shield" data-ng-src="data:image/png;base64,{{ x.logo1 }}">
-                    {{ x.team1 }}
-                    <span>{{ x.result1 }}</span>
-                  </div>
-                  <div class="team">
-                    <img class="shield" data-ng-src="data:image/png;base64,{{ x.logo2 }}">
-                    {{ x.team2 }}
-                    <span>{{ x.result2 }}</span>
+                    ng-click="gamesCtrl.select($index, 'match')"
+                    ng-show="gamesCtrl.hasTime(x)">
+                  <div class="row">
+                    <div ng-class="gamesCtrl.isSelected(1, 'content', 'col-md-10', 'col-md-12')">
+                      <div class="teams">
+                        <div class="team">
+                          <img class="shield" ng-src="{{ x.home.logo }}">
+                          {{ x.home.name }}
+                          <span ng-show="gamesCtrl.isSelected(0, 'content', true, false)">{{ x.homeGoals }}</span>
+                        </div>
+                        <div class="team">
+                          <img class="shield" ng-src="{{ x.away.logo }}">
+                          {{ x.away.name }}
+                          <span ng-show="gamesCtrl.isSelected(0, 'content', true, false)">{{ x.awayGoals }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="predict"
+                           ng-click="gamesCtrl.showBetgram(x)"
+                           ng-show="gamesCtrl.isSelected(1, 'content', true, false)">
+                        <object
+                                ng-click="gamesCtrl.showBetgram(x)"
+                                type="image/svg+xml"
+                                data="src/assets/img/logo.svg">
+                        </object>
+                      </div>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -56,4 +78,8 @@
       </div>
     </div>
   </div>
+
+  <!-- begin answer -->
+  <div answer-directive="gamesCtrl.betgram" ng-if="gamesCtrl.betgram"></div>
+  <!-- end answer -->
 </div>

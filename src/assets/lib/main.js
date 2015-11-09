@@ -1,6 +1,4 @@
 (function () {
-	
-
 	/* Automatic background swipe every 8.2 seconds. */
 	var actualBg = 0;
 	var bg = document.getElementById('bg');

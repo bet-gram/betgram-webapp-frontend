@@ -6,19 +6,15 @@
 		var _this = this;
 
 		// define the match model
-		var Match = $resource('/game/:id', { id: '@id' });
+		var Match = $resource('http://betgram-services.herokuapp.com/matches/');
 
 		// define CRUD operations
 		_this.get = get;
 		_this.post = post;
 
 		// Implement CRUD operations
-		function get(id) {
-			if (id) {
-				return Match.get({ id: id });
-			} else {
-				return Match.query();
-			}
+		function get(cb) {
+			return Match.query(cb);
 		}
 
 		function post() {

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/assets/css/main.css">
+    <link rel="stylesheet" href="./src/assets/css/circle.css">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:100,300'>
     <!-- end link -->
   </head>
@@ -35,9 +36,9 @@
 
     <!-- Fixed button with access to betgram's blog -->
     <!-- begin blog -->
-    <div id="blog">
+    <a target="_blank" href="http://espn.go.com/espn/feature/story/_/id/12280555/how-billy-walters-became-sports-most-successful-controversial-bettor" id="blog">
       <h4>Check our blog</h4>
-    </div>
+    </a>
     <!-- end blog -->
 
     <!-- Welcome screen containing logo, name, and slogan -->
@@ -67,6 +68,8 @@
 
     <!-- JS library and custom scripts -->
     <!-- begin script -->
+    <script src="//cdn.pubnub.com/pubnub.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-mocks.js"></script>
@@ -93,6 +96,11 @@
     <script src="./src/modules/pricing/pricing.mod.js"></script>
     <script src="./src/modules/pricing/pricing.ctr.js"></script>
     <script src="./src/modules/pricing/pricing.dir.js"></script>
+
+    <script src="./src/modules/answer/answer.mod.js"></script>
+    <script src="./src/modules/answer/answer.ctr.js"></script>
+    <script src="./src/modules/answer/answer.dir.js"></script>
+    <script src="./src/modules/answer/answer.svc.js"></script>
 
     <script src="./src/shared/mock/mock.mod.js"></script>
     <!-- end script -->

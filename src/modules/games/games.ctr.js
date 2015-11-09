@@ -6,12 +6,9 @@
 		var _this = this;
 
 		// save matches
-		_this.matches = gamesService.get();
-
-		// actual match
-		_this.match = gamesService.get(1);
-
-		// actual selected index
+		_this.matches = gamesService.get(function () {
+			_this.match = _this.matches[0] || null;
+		});
 
 		// select match
 		_this.matchIndex = 0;
@@ -19,17 +16,21 @@
 		// select index
 		_this.select = select;
 		_this.isSelected = isSelected;
-		_this.getNumber = getNumber;
 
 		// select content
 		_this.menuItems = 3;
 		_this.menuIndex = 0;
 
+		// show betgram
+		_this.betgram = null;
+		_this.hasTime = hasTime;
+		_this.showBetgram = showBetgram;
+
 		function select($index, target) {
 			if (target === 'match') {
 				if ($index != _this.matchIndex && $index >= 0 && $index < _this.matches.length) {
 					_this.matchIndex = $index;
-					_this.match = gamesService.get(_this.matches[$index].id);
+					_this.match = _this.matches[$index];
 				}
 			} else if (target === 'content') {
 				if ($index != _this.menuIndex && $index >= 0 && $index < _this.menuItems) {
@@ -46,8 +47,17 @@
 			}
 		}
 
-		function getNumber(n) {
-			return new Array(n);
+		function showBetgram(match) {
+			_this.betgram = {
+				id1: match.home.betgramCode,
+				id2: match.away.betgramCode
+			};
+		}
+
+		function hasTime(match) {
+			var a = _this.menuIndex === 0 && match.homeGoals !== -1 && match.awayGoals !== -1;
+			var b = _this.menuIndex === 1 && match.homeGoals === -1 && match.awayGoals === -1;
+			return a || b;
 		}
 	}
 })();
